@@ -25,6 +25,7 @@ class GameField {
                 if(this.#random) {
                     let isAlive = this.#random?Math.random()>this.#randomCoeff:true;
                     this.#cells.push(new Cell(x,y,isAlive));
+
                     if(isAlive) {
                         this.#table.querySelector('[data-y="'+y+'"][data-x="'+x+'"]').classList.add('active');
                     }
@@ -43,6 +44,7 @@ class GameField {
         }
         for (let y = 0; y < this.#rows; y++) {
             let tableRow = this.#table.insertRow(y);
+
             for (let x = 0; x < this.#columns; x++) {
                 let tableCell = tableRow.insertCell(x);
                 tableCell.setAttribute('data-y',y);
@@ -61,6 +63,7 @@ class GameField {
             this.#isCellsInit = true;
             this.addCells();
         }
+
         this.#isGameRunning = true;
         window.requestAnimationFrame(() => this.gameLoop());
     }
@@ -93,7 +96,9 @@ class GameField {
         
         for (let i = 0; i < this.#cells.length; i++) {
             this.#cells[i].isNextAlive() ? this.#cells[i].born():this.#cells[i].die();
+            
             let tableCell = this.#table.querySelector('td[data-y="'+this.#cells[i].coord().x+'"][data-x="'+this.#cells[i].coord().y+'"]');
+            
             if(this.#cells[i].isAlive()) {
                 tableCell.classList.add('active');
             }
@@ -118,6 +123,7 @@ class GameField {
         this.#isGameRunning = false;
         this.#cells = [];
         this.#isCellsInit = false;
+        
         while (this.#table.firstChild) {
             this.#table.removeChild(this.#table.lastChild);
         }

@@ -28,6 +28,7 @@ form.addEventListener('submit',(e) => {
 });
 runBtn.addEventListener('click',(e) => {
     e.target.classList.toggle('active');
+
     if(!e.target.classList.contains('active')){
         lifeGrid.pauseGame();
         e.target.textContent="Play Game";
@@ -36,6 +37,7 @@ runBtn.addEventListener('click',(e) => {
         lifeGrid.runGame();
         e.target.textContent="Pause Game";
     }
+    
     resetBtn.removeAttribute('disabled');
 });
 resetBtn.addEventListener('click',(e) => {
