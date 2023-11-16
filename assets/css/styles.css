@@ -1,0 +1,115 @@
+:root {
+    --vt-c-green: rgb(66, 184, 131);
+    --vt-c-green-dark: rgb(37, 109, 77);
+    --input-height: 30px;
+}
+* {
+    box-sizing: border-box;
+}
+html,body {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font: Arial,sans-serif 14px 400 #fff;
+    background: #000;
+    overflow: auto;
+}
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px;
+}
+form .input-box {
+    display: block;
+    padding: 0 10px;
+}
+form .input-box label {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 5px;
+    color: var(--vt-c-green);
+}
+form .input-box input {
+    display: block;
+    background: #fff;
+    height: var(--input-height);
+    border: none;
+    padding: 0 10px;
+    color: #000;
+    line-height: var(--input-height);
+}
+form .input-checkbox {
+    display: flex;
+    padding: 0 10px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+form .input-checkbox input {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border: none;
+    line-height: 25px;
+}
+form .input-checkbox label {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 0 10px;
+    color: var(--vt-c-green);
+}
+form .input-box button {
+    display: block;
+    height: var(--input-height);
+    padding: 0 10px;
+    background: var(--vt-c-green);
+    color: #fff;
+    border: none;
+    line-height: var(--input-height);
+}
+form .input-box button[disabled="disabled"] {
+    background-color: var(--vt-c-green-dark);
+    opacity: .75;
+}
+#gameField {
+    position: relative;
+    max-width: 100%;
+    width: 750px;
+}
+/* #gameField:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+#gameField canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 1px solid var(--vt-c-green);
+} */
+#gameField #lifeGrid {
+    width: 100%;
+    border-collapse: collapse;
+}
+#gameField #lifeGrid td {
+    border: 1px solid rgba(66, 184, 131,.5);
+    background-color: #000;
+    transition: background-color .25s 0s ease-in-out;
+}
+#gameField #lifeGrid td:before {
+    content:'';
+    display: block;
+    padding-top: 100%;
+}
+#gameField #lifeGrid td.active {
+    background-color: var(--vt-c-green);
+}

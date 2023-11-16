@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>"Life" game</title>
+    <meta name="title" content="Conwey`s 'Life' game">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">    
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+	<form id="controlPanelForm" name="controlPanelForm">
+        <div class="input-box">
+            <label for="inputWidth">Life field horizontal size</label>
+            <input type="text" name="inputWidth" id="inputWidth" />
+        </div>
+        <div class="input-box">
+            <label for="inputHeight">Life field vertical size</label>
+            <input type="text" name="inputHeight" id="inputHeight" />
+        </div>
+        <div class="input-box">
+            <label for="inputSpeed">Animation speed (100ms - 5000ms)</label>
+            <input type="text" name="inputSpeed" id="inputSpeed" />
+        </div>
+        <div class="input-checkbox">
+            <input type="checkbox" name="inputRandom" id="inputRandom" value="1"/>
+            <label for="inputRandom">Random generation</label>
+        </div>
+        <div class="input-box">
+            <label for="inputRandomCoefficient">Fullfill for random generation (0-100)</label>
+            <input type="text" name="inputRandomCoefficient" id="inputRandomCoefficient" />
+        </div>
+        <div class="input-box">
+            <button type="submit" id="createBtn">Create Gamefield</button>
+        </div>
+        <div class="input-box">
+            <button type="button" id="playGame" disabled="disabled">Play Game</button>
+        </div>
+        <div class="input-box">
+            <button type="button" id="resetGame" disabled="disabled">Reset Game</button>
+        </div>
+    </form>
+    <div id="gameField">
+        <table id="lifeGrid"></table>
+    </div>
+    <script type="text/javascript"  src="assets/js/Cell.class.js"></script>
+    <script type="text/javascript"  src="assets/js/Grid.class.js"></script>
+    <script type="text/javascript"  src="assets/js/scripts.js"></script>
+</body>
+</html>
